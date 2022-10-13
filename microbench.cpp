@@ -58,7 +58,7 @@ extern "C" uint64_t *baseline_double(uint64_t * _array, unsigned long int size) 
 		array[i] = 0;
 	}
 
-	for (double j = 0; j < 3; j++) {
+	for (uint j = 0; j < 3; j++) {
 		for(uint i= 1 ; i < size; i++) {
 			array[i] += i/(1+j)+array[i - 1];
 		}
