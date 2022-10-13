@@ -13,17 +13,35 @@
 
 START_C
 
-uint64_t sum_of_locations_solution(uint64_t *search_space, uint32_t search_space_size, uint64_t* queries, uint32_t query_count)
+// uint64_t sum_of_locations_solution(uint64_t *search_space, uint32_t search_space_size, uint64_t* queries, uint32_t query_count)
+// {
+// 	uint64_t r = 0;
+
+// 	for(uint32_t i = 0; i < query_count; i++) {
+// 		for(uint32_t j = 0; j < search_space_size; j++) {
+// 			if (search_space[j] == queries[i]) {
+// 				r += i;
+// 				break;
+// 			}
+// 		}
+// 	}
+// 	return r;
+// }
+
+uint64_t sum_of_locations_solution(uint64_t *search_space, uint32_t search_space_size, uint64_t *queries, uint32_t query_count)
 {
 	uint64_t r = 0;
-
-	for(uint32_t i = 0; i < query_count; i++) {
-		for(uint32_t j = 0; j < search_space_size; j++) {
-			if (search_space[j] == queries[i]) {
+    std::unordered_set<uint64_t> intSet;  
+    for (uint32_t i = 0; i < search_space_size; i++)
+    {
+            intSet.insert(search_space[i]);
+    }
+  
+		for(uint32_t i = 0; i < query_count; i++) {
+			if (intSet.count(queries[i])>0) {
 				r += i;
-				break;
+				// break;
 			}
-		}
 	}
 	return r;
 }
