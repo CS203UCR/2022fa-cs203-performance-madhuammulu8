@@ -31,7 +31,7 @@ uint64_t sum_of_locations_solution(uint64_t *search_space, uint32_t search_space
 {
 	uint64_t r = 0;
     std::unordered_set<uint64_t> intSet;  
-    for (uint32_t i = 0; i < search_space_size; i++)
+    for (uint64_t i = 0; i < search_space_size; i++)
     {
             intSet.insert(search_space[i]);
     }
