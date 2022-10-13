@@ -40,7 +40,6 @@ uint64_t sum_of_locations_solution(uint64_t *search_space, uint32_t search_space
 		for(uint32_t i = 0; i < query_count; i++) {
 			if (intSet.count(queries[i])>0) {
 				r += i;
-				// break;
 			}
 	}
 	return r;
