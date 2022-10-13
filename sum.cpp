@@ -10,7 +10,6 @@
 #define START_C extern "C" { // this just hides the braces from the editor, so it won't try to indent everything.
 #define END_C  }
 
-
 START_C
 
 // uint64_t sum_of_locations_solution(uint64_t *search_space, uint32_t search_space_size, uint64_t* queries, uint32_t query_count)
@@ -36,9 +35,8 @@ uint64_t sum_of_locations_solution(uint64_t *search_space, uint32_t search_space
     {
             intSet.insert(search_space[i]);
     }
-  
 		for(uint32_t i = 0; i < query_count; i++) {
-			if (intSet.count(queries[i])>0) {
+			if (intSet.find(queries[i]) != intSet.end()) {
 				r += i;
 			}
 	}
