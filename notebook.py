@@ -35,7 +35,6 @@ def shell_cmd(cmd, shell=False, quiet_on_success=False):
 
     return
     
-
 def build_reps(src, asm, obj, function, gmon=None, run=True, *argc, **kwargs):
     gprof = None
     call_graph = None
@@ -487,7 +486,8 @@ def IC_avg_and_combine(*argc):
                  CT=df['CT'].mean(),
                  ET=df['ET'].sum(),
                  MHz=df['MHz'].mean())
-        all = all.append(r, ignore_index=True)
+        all = all.append(r, ignore_index=True);
+#        all = pd.concat([all, pd.DataFrame.from_dict(r)])
 
     return all
 
