@@ -30,7 +30,7 @@ include $(PWD)/config.make
 sum.exe: $(BUILD)perfstats.o $(BUILD)sum.o $(BUILD)sum_main.o $(BUILD)sum_baseline.o 
 	$(COMPILER) $(OPTIMIZE) $(MICROBENCH_OPTIMIZE) $(LIBS) $(BUILD)perfstats.o $(BUILD)sum.o $(BUILD)sum_main.o $(BUILD)sum_baseline.o  -o sum.exe
 
-$(BUILD)sum.o: OPTIMIZE=$(SUM_OPTIMIZE)
+$(BUILD)sum.o: OPTIMIZE=$(CC) $(SUM_OPTIMIZE)
 		
 $(BUILD)%.o: %.cpp
 	mkdir -p $(BUILD) 
