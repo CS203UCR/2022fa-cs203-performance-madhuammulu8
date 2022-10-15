@@ -6,7 +6,7 @@
 #include<unordered_set>
 #include "perfstats.h"
 #include "sum.h"
-
+#include<unordered_map>
 #define START_C extern "C" { // this just hides the braces from the editor, so it won't try to indent everything.
 #define END_C  }
 
@@ -45,3 +45,5 @@ uint64_t sum_of_locations_solution(uint64_t *search_space, uint32_t search_space
 }
 
 END_C
+
+
